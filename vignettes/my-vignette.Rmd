@@ -1,0 +1,28 @@
+---
+title: "Map UNIPROT IDs to MGI symbols"
+author: "Nathan Skene"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Explanation
+
+This is an unexciting package used to convert Uniprot IDs to MGI symbols in a simple manner. Uniprot IDs which map to multiple genes are returned as NA.
+
+```{r, fig.show='hold'}
+library(Uniprot2mgi)
+uniprot_ids = c("Q05CX3","B1AR31","A1ILG8")
+mgi_symbols = map_uniprotIDs_to_MGIsymbols(uniprot_ids=uniprot_ids)
+print(mgi_symbols)
+```
